@@ -5,12 +5,14 @@ from datetime import datetime
 from data import generate_message
 from kafka import KafkaProducer
 
-# # membentuk pesannya ke data JSON 
+# membentuk pesannya ke data JSON 
 # def serializer(message):
 #     return json.dumps(message).encode('utf-8')
 
 # Config kafka producer
 producer = KafkaProducer(
+    # bootstrap_servers=['localhost:9092'],
+    # value_serializer=serializer
     bootstrap_servers=['localhost:9092'],
     security_protocol="SASL_PLAINTEXT",
     sasl_mechanism="GSSAPI",

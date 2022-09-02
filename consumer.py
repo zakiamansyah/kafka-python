@@ -1,4 +1,4 @@
-import json 
+import json
 from kafka import KafkaConsumer
 
 if __name__ == '__main__':
@@ -6,12 +6,7 @@ if __name__ == '__main__':
     consumer = KafkaConsumer(
         'messages',
         bootstrap_servers='localhost:9092',
-        security_protocol="SASL_PLAINTEXT",
-        sasl_mechanism="GSSAPI",
-        sasl_kerberos_service_name="kafka",
-        auto_offset_reset="latest",
-        enable_auto_commit=True,
-        # group_id="group-core-3",
+        auto_offset_reset='earliest'
     )
     for message in consumer:
         print(json.loads(message.value))
