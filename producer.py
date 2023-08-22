@@ -11,7 +11,7 @@ from kafka import KafkaProducer
 
 # Config kafka producer
 producer = KafkaProducer(
-    # bootstrap_servers=['localhost:9092'],
+    bootstrap_servers=['localhost:9092'],
     # value_serializer=serializer
     bootstrap_servers=['localhost:9092'],
     security_protocol="SASL_PLAINTEXT",
